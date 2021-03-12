@@ -57,10 +57,16 @@ nav .right .menu-btn > button {
     background: #000;
     border: none;
     cursor: pointer;
+    transition: background-color .3s linear;
+}
+
+nav .right .menu-btn > button:hover {
+    background-color: #191c1f;
 }
 
 nav .right .menu-btn > a:active, nav .right .menu-btn > button:active {
-
+    position: relative;
+    top: 1px;
 }
 
 /*endregion*/
@@ -68,6 +74,7 @@ nav .right .menu-btn > a:active, nav .right .menu-btn > button:active {
 /*region menu items*/
 
 nav .menu-item {
+    position: relative;
     margin: 0 20px;
 }
 
@@ -85,6 +92,62 @@ nav .menu-item > a:hover {
 nav .menu-item > a.active {
     opacity: 1;
     font-weight: 400;
+}
+
+/*endregion*/
+
+/*region dropdown menu*/
+
+nav .menu-item > .drop-menu {
+    position: absolute;
+    top: 38px;
+    left: -170px;
+    background-color: #FFFFFC;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
+    padding: 20px;
+    display: none;
+}
+
+nav .menu-item > .drop-menu.active {
+    display: flex;
+}
+
+nav .menu-item .drop-menu > .drop-menu-section {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav .menu-item .drop-menu .drop-menu-section > .title {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    color: #ced5da;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    color: #FFFFFC;
+    background: #CCD5DA;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle > svg {
+    width: 18px;
+    height: auto;
+}
+
+nav .menu-item .drop-menu .drop-menu-section > .menu-item {
+    margin: 15px 0;
 }
 
 /*endregion*/
