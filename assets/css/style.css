@@ -113,9 +113,12 @@ nav .menu-item > .drop-menu.active {
 }
 
 nav .menu-item .drop-menu > .drop-menu-section {
-    width: 200px;
     display: flex;
     flex-direction: column;
+}
+
+nav .menu-item .drop-menu#features > .drop-menu-section {
+    width: 200px;
 }
 
 nav .menu-item .drop-menu .drop-menu-section > .title {
@@ -129,7 +132,7 @@ nav .menu-item .drop-menu .drop-menu-section > .title {
     align-items: center;
 }
 
-.circle {
+nav .circle {
     width: 25px;
     height: 25px;
     color: #FFFFFC;
@@ -141,13 +144,36 @@ nav .menu-item .drop-menu .drop-menu-section > .title {
     align-items: center;
 }
 
-.circle > svg {
+nav .circle > svg {
     width: 18px;
     height: auto;
 }
 
 nav .menu-item .drop-menu .drop-menu-section > .menu-item {
     margin: 15px 0;
+}
+
+nav .menu-item .drop-menu .drop-menu-section .menu-item > a {
+    font-weight: 400;
+    color: #8d9aa2;
+    opacity: 1;
+}
+
+nav .menu-item .drop-menu .drop-menu-section .menu-item.disabled > span {
+    position: relative;
+    color: #cdcecd;
+}
+
+nav .menu-item .drop-menu .drop-menu-section .menu-item.disabled > span:after {
+    position: absolute;
+    top: -9px;
+    right: -35px;
+    font-size: .5rem;
+    color: #3d8ffc;
+    content: "coming soon";
+    letter-spacing: .07rem;
+    text-transform: uppercase;
+    display: block;
 }
 
 /*endregion*/
