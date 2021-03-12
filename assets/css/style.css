@@ -79,6 +79,15 @@ nav .menu-item {
     margin: 0 20px;
 }
 
+nav .menu-item:after {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+}
+
 nav .menu-item > a {
     color: #000;
     text-decoration: none;
@@ -102,7 +111,7 @@ nav .menu-item > a.active {
 nav .menu-item > .drop-menu {
     position: absolute;
     top: 38px;
-    left: -170px;
+    left: -50px;
     background-color: #FFFFFC;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
     padding: 20px;
@@ -113,7 +122,12 @@ nav .menu-item > .drop-menu.active {
     display: flex;
 }
 
+nav .menu-item > .drop-menu#features {
+    left: -170px;
+}
+
 nav .menu-item .drop-menu > .drop-menu-section {
+    /*width: 170px;*/
     display: flex;
     flex-direction: column;
 }
@@ -158,6 +172,7 @@ nav .menu-item .drop-menu .drop-menu-section .menu-item > a {
     font-weight: 400;
     color: #8d9aa2;
     opacity: 1;
+    white-space: nowrap;
     transition: color .2s ease-in-out;
 }
 
