@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     padding: 0;
@@ -8,7 +9,8 @@
     font-weight: 300;
 }
 
-header {
+header,
+#jumbo {
     max-width: 86rem;
     margin: 0 auto;
 }
@@ -62,7 +64,7 @@ nav .right .menu-btn > button {
 }
 
 nav .right .menu-btn > button:hover {
-    background-color: #191c1f;
+    background-color: #47494c;
 }
 
 nav .right .menu-btn > a:active, nav .right .menu-btn > button:active {
@@ -112,10 +114,11 @@ nav .menu-item > .drop-menu {
     position: absolute;
     top: 38px;
     left: -50px;
-    background-color: #FFFFFC;
+    background-color: #fff;
     box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
     padding: 20px;
     display: none;
+    z-index: 1;
 }
 
 nav .menu-item > .drop-menu.active {
@@ -127,7 +130,6 @@ nav .menu-item > .drop-menu#features {
 }
 
 nav .menu-item .drop-menu > .drop-menu-section {
-    /*width: 170px;*/
     display: flex;
     flex-direction: column;
 }
@@ -160,7 +162,7 @@ nav .circle {
 }
 
 nav .circle > svg {
-    width: 18px;
+    width: 16px;
     height: auto;
 }
 
@@ -197,6 +199,266 @@ nav .menu-item .drop-menu .drop-menu-section .menu-item.disabled > span:after {
     display: block;
 }
 
+/*endregion*/
+
+/*endregion*/
+
+/*region jumbo*/
+
+section#jumbo {
+    display: flex;
+}
+
+section#jumbo >  .inner-jumbo {
+    width: 50%;
+    padding: 100px 20px;
+}
+
+section#jumbo .inner-jumbo > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.7rem;
+    font-weight: 600;
+    line-height: 100px;
+    margin-bottom: 30px;
+}
+
+section#jumbo .inner-jumbo > p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #88959e;
+    width: 80%;
+    line-height: 30px;
+}
+
+/*region form*/
+
+section#jumbo .inner-jumbo > form {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+section#jumbo .inner-jumbo form .prefix {
+    position: relative;
+    width: 12%;
+    margin-right: 15px;
+}
+
+section#jumbo .inner-jumbo form > .number {
+    position: relative;
+    width: 30%;
+    margin-right: 15px;
+}
+
+section#jumbo .inner-jumbo form .prefix > select,
+section#jumbo .inner-jumbo form .number > input[type="tel"] {
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 1px solid #cdd2d5;
+    outline: none;
+}
+
+section#jumbo .inner-jumbo form .prefix > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+section#jumbo .inner-jumbo form .prefix > svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 28px;
+    padding: 0.2rem;
+    stroke-width: 0;
+    transform: translateY(-50%) rotateX(180deg) rotateZ(90deg);
+    pointer-events: none;
+}
+
+
+section#jumbo .inner-jumbo form .number > label[for="phone-number"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b8e8e;
+    pointer-events: none;
+}
+
+section#jumbo .inner-jumbo form .number > label[for="phone-number"].onfocusin {
+    animation: moveontop .4s ease-in;
+    animation-fill-mode: forwards;
+}
+
+section#jumbo .inner-jumbo form .number > label[for="phone-number"].onfocusout {
+    animation: moveatorigin .4s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveontop {
+    from {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) scale(1);
+    }
+
+    to {
+        top: -20px;
+        left: -13px;
+        transform: scale(0.75);
+    }
+}
+
+@keyframes moveatorigin {
+    from {
+        top: -20px;
+        left: -13px;
+        transform: scale(0.75);
+    }
+
+    to {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+section#jumbo .inner-jumbo form .prefix.onfocusin:after,
+section#jumbo .inner-jumbo form .number.onfocusin:after,
+section#jumbo .inner-jumbo form .prefix.onfocusout:after,
+section#jumbo .inner-jumbo form .number.onfocusout:after{
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    background: #0075eb;
+    display: block;
+}
+
+section#jumbo .inner-jumbo form .prefix.onfocusin:after,
+section#jumbo .inner-jumbo form .number.onfocusin:after {
+    animation: grow .3s ease-in;
+    animation-fill-mode: forwards;
+}
+
+section#jumbo .inner-jumbo form .prefix.onfocusout:after,
+section#jumbo .inner-jumbo form .number.onfocusout:after {
+    animation: shrink .3s ease-out;
+}
+
+@keyframes grow {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes shrink {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+section#jumbo .inner-jumbo form .number > input[type="tel"] {
+    width: 100%;
+    padding: 5px 0;
+}
+
+section#jumbo .inner-jumbo form > input[type="submit"] {
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 25%;
+    color: #fff;
+    background: #000;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+section#jumbo .inner-jumbo form > input[type="submit"]:disabled {
+    color: #919293;
+    background: #47494c;
+    cursor: not-allowed;
+}
+
+/*endregion*/
+
+section#jumbo .inner-jumbo .sub-description {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+section#jumbo .inner-jumbo .sub-description > svg {
+    width: 20px;
+}
+
+section#jumbo .inner-jumbo .sub-description > p {
+    margin-left: 20px;
+}
+
+/*region player*/
+section#jumbo .inner-jumbo > .player {
+    position: relative;
+    width: 80%;
+}
+
+section#jumbo .inner-jumbo .player > img {
+    position: relative;
+    top: -50px;
+    width: 100%;
+}
+
+section#jumbo .inner-jumbo .player .play-btn {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translateX(-45%);
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 10%) 0 4px 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+section#jumbo .inner-jumbo .player .play-btn > svg {
+    margin-left: 5px;
+}
+
+section#jumbo .inner-jumbo > .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+section#jumbo .inner-jumbo .overlay > button.close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: none;
+    border: 1px solid #cdd2d5;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#jumbo .inner-jumbo .overlay button.close > svg {
+    color: #47494c;
+    font-size: 1.8rem;
+}
 /*endregion*/
 
 /*endregion*/
