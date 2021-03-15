@@ -6,18 +6,35 @@ let prefix = $(".prefix");
 
 let telLabel = $(".number > label");
 
+let submit = $("#register");
+let checking;
+
 tel.focusin(function () {
     onfocusenter(number);
     telLabel.removeClass("onfocusout");
     telLabel.addClass("onfocusin");
+
+    checking = setInterval(function () {
+        if (tel.val().length == tel.attr("maxlength")) {
+            submit.removeAttr("disabled");
+            console.log("in");
+        }
+        else {
+            submit.attr("disabled", true);
+            console.log("out");
+        }
+    }, 100);
 });
 
 tel.focusout(function () {
     onfocusleave(number);
+
     if (!tel.val()) {
         telLabel.removeClass("onfocusin");
         telLabel.addClass("onfocusout");
     }
+
+    clearInterval(checking);
 });
 
 select.focusin(function () {

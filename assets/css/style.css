@@ -15,6 +15,20 @@ header,
     margin: 0 auto;
 }
 
+button:active, input[type="submit"]:active {
+    position: relative;
+    top: 1px;
+}
+
+input[type="tel"]:invalid {
+    box-shadow: none;
+    color: #FF0000;
+}
+
+input[type="submit"]:disabled:active {
+    position: static;
+}
+
 /*region nav*/
 
 nav {
@@ -67,7 +81,7 @@ nav .right .menu-btn > button:hover {
     background-color: #47494c;
 }
 
-nav .right .menu-btn > a:active, nav .right .menu-btn > button:active {
+nav .right .menu-btn > a:active {
     position: relative;
     top: 1px;
 }
@@ -372,6 +386,7 @@ section#jumbo .inner-jumbo form > input[type="submit"] {
     padding: 15px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 section#jumbo .inner-jumbo form > input[type="submit"]:disabled {
